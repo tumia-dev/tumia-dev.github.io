@@ -1,0 +1,77 @@
+/* Tumia — feuille de style commune (couleurs de Goal Live) */
+:root {
+  --green: #00c853;
+  --green-dark: #008c3a;
+  --bg: #f5f5f5;
+  --card: #ffffff;
+  --text: #171717;
+  --muted: #5f6368;
+  --line: #e3e6e4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #ececec;
+    --muted: #a6aaae;
+    --line: #2c2c2c;
+    --green-dark: #2ee07a;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+a { color: var(--green-dark); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+/* En-tête */
+.top { background: var(--card); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; color: var(--text); text-decoration: none; }
+.brand .mark { width: 36px; height: 36px; border-radius: 10px; background: var(--green); color: #fff; display: grid; place-items: center; font-weight: 900; }
+.top nav a { margin-left: 16px; text-decoration: none; font-weight: 600; font-size: .95rem; }
+
+/* Accueil */
+.hero { padding: 64px 0 40px; text-align: center; }
+.hero h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.15; margin: 0 0 12px; }
+.hero p { color: var(--muted); font-size: 1.1rem; max-width: 620px; margin: 0 auto; }
+.app {
+  background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+  padding: 28px; display: grid; grid-template-columns: 160px 1fr; gap: 28px; align-items: center;
+}
+.app img { width: 160px; height: 160px; object-fit: contain; }
+.app h2 { margin: 0 0 6px; font-size: 1.6rem; }
+.app .tag { color: var(--green-dark); font-weight: 700; margin: 0 0 12px; }
+.app ul { margin: 0 0 18px; padding-left: 1.2rem; }
+.badge {
+  display: inline-block; background: var(--green-dark); color: #fff; padding: 10px 18px;
+  border-radius: 12px; font-weight: 700; text-decoration: none;
+}
+@media (prefers-color-scheme: dark) { .badge { background: #008c3a; } }
+.soon { margin: 32px 0 56px; text-align: center; color: var(--muted); }
+.soon strong { color: var(--text); }
+@media (max-width: 640px) {
+  .app { grid-template-columns: 1fr; text-align: center; }
+  .app img { margin: 0 auto; }
+  .app ul { text-align: left; }
+  .top nav a { margin-left: 10px; font-size: .88rem; }
+}
+
+/* Pages de texte (politique de confidentialité) */
+.doc { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+.doc h1 { font-size: 1.8rem; line-height: 1.2; margin: 0 0 4px; }
+.doc h2 { font-size: 1.15rem; margin: 2rem 0 .4rem; color: var(--green-dark); }
+.doc .muted { color: var(--muted); }
+.doc .lang { margin: 8px 0 24px; }
+.doc .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 4px 18px; margin: 12px 0; }
+.doc ul { padding-left: 1.2rem; }
+
+/* Pied de page */
+footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: .92rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+footer a { text-decoration: none; }
